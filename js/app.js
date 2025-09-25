@@ -12,6 +12,12 @@ function adicionar(){
     let listaDeProdutos = document.getElementById("lista-produtos");
     let produtoExistente = document.getElementById("item-" + nomeProduto);
 
+if(isNaN(quantidade) || quantidade === ""){
+        alert("Você precisa colocar uma quantidade do produto")
+    }
+
+else{
+
     if(produtoExistente){
         // se já existe, atualiza quantidade e subtotal
         let qtdSpan = produtoExistente.querySelector(".qtd");
@@ -32,6 +38,7 @@ function adicionar(){
                 <span class="texto-azul preco">R$${subtotal.toFixed(2).replace(".", ",")}</span>
             </section>`;
     }
+}
 
     // atualizar total do carrinho
     total += subtotal;
